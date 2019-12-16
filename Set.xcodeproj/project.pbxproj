@@ -12,6 +12,8 @@
 		52C718A51FFB44A30025D77E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52C718A31FFB44A30025D77E /* Main.storyboard */; };
 		52C718A71FFB44A30025D77E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 52C718A61FFB44A30025D77E /* Assets.xcassets */; };
 		52C718AA1FFB44A30025D77E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52C718A81FFB44A30025D77E /* LaunchScreen.storyboard */; };
+		52C718B21FFC87FB0025D77E /* Set.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C718B11FFC87FB0025D77E /* Set.swift */; };
+		52C718B61FFC8E800025D77E /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C718B41FFC88B70025D77E /* Card.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +24,8 @@
 		52C718A61FFB44A30025D77E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		52C718A91FFB44A30025D77E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		52C718AB1FFB44A30025D77E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		52C718B11FFC87FB0025D77E /* Set.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Set.swift; sourceTree = "<group>"; };
+		52C718B41FFC88B70025D77E /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,14 +58,24 @@
 		52C7189E1FFB44A30025D77E /* Set */ = {
 			isa = PBXGroup;
 			children = (
-				52C7189F1FFB44A30025D77E /* AppDelegate.swift */,
 				52C718A11FFB44A30025D77E /* ViewController.swift */,
+				52C718B11FFC87FB0025D77E /* Set.swift */,
+				52C718B41FFC88B70025D77E /* Card.swift */,
 				52C718A31FFB44A30025D77E /* Main.storyboard */,
-				52C718A61FFB44A30025D77E /* Assets.xcassets */,
-				52C718A81FFB44A30025D77E /* LaunchScreen.storyboard */,
 				52C718AB1FFB44A30025D77E /* Info.plist */,
+				52C718B31FFC88820025D77E /* Supporting Files */,
 			);
 			path = Set;
+			sourceTree = "<group>";
+		};
+		52C718B31FFC88820025D77E /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				52C718A81FFB44A30025D77E /* LaunchScreen.storyboard */,
+				52C7189F1FFB44A30025D77E /* AppDelegate.swift */,
+				52C718A61FFB44A30025D77E /* Assets.xcassets */,
+			);
+			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,6 +152,8 @@
 			files = (
 				52C718A21FFB44A30025D77E /* ViewController.swift in Sources */,
 				52C718A01FFB44A30025D77E /* AppDelegate.swift in Sources */,
+				52C718B21FFC87FB0025D77E /* Set.swift in Sources */,
+				52C718B61FFC8E800025D77E /* Card.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -275,7 +291,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 895EQWU522;
 				INFOPLIST_FILE = Set/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "jtlemkin-ucdavis.edu.Set";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -289,7 +307,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 895EQWU522;
 				INFOPLIST_FILE = Set/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "jtlemkin-ucdavis.edu.Set";
 				PRODUCT_NAME = "$(TARGET_NAME)";
