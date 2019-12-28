@@ -8,23 +8,35 @@
 
 import Foundation
 
-struct Card: Equatable
+struct Card: Hashable
 {
-    static func ==(lhs: Card, rhs: Card) -> Bool {
-        return lhs.identifier == rhs.identifier
+    
+    enum Attribute: Int, CaseIterable
+    {
+        case first = 1, second, third
     }
     
-    var color : Color
-    var shape : Shape
-    var shading : Shading
-    var number : Number
-    var identifier: Int
+    typealias Color = Attribute
+    typealias Shape = Attribute
+    typealias Shading = Attribute
+    typealias Number = Attribute
+    
+    let color : Color
+    let shape : Shape
+    let shading : Shading
+    let number : Number
+    
+    private let identifier: Int
     
     private static var identifierFactory = 0
     
     private static func getUniqueIdentifier() -> Int {
         identifierFactory += 1
         return identifierFactory
+    }
+    
+    static func ==(lhs: Card, rhs: Card) -> Bool {
+        return lhs.identifier == rhs.identifier
     }
     
     init(color: Color, shape: Shape, shading: Shading, number: Number) {
@@ -35,33 +47,3 @@ struct Card: Equatable
         identifier = Card.getUniqueIdentifier()
     }
 }
-
-enum Attribute: Int, Sequence, IteratorProtocol
-{
-    case none = 0
-    case first = 1
-    case second = 2
-    case third = 3
-    
-    mutating func next() -> Attribute? {
-        switch self {
-        case .none:
-            self = .first
-            return self
-        case .first:
-            self = .second
-            return self
-        case .second:
-            self = .third
-            return self
-        case .third:
-            self = .none
-            return nil
-        }
-    }
-}
-
-typealias Color = Attribute
-typealias Shape = Attribute
-typealias Shading = Attribute
-typealias Number = Attribute

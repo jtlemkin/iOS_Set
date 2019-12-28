@@ -7,16 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5286081823B6CF6700ACD42F /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5286081723B6CF6700ACD42F /* Util.swift */; };
 		52C718A01FFB44A30025D77E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C7189F1FFB44A30025D77E /* AppDelegate.swift */; };
 		52C718A21FFB44A30025D77E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C718A11FFB44A30025D77E /* ViewController.swift */; };
 		52C718A51FFB44A30025D77E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52C718A31FFB44A30025D77E /* Main.storyboard */; };
 		52C718A71FFB44A30025D77E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 52C718A61FFB44A30025D77E /* Assets.xcassets */; };
 		52C718AA1FFB44A30025D77E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52C718A81FFB44A30025D77E /* LaunchScreen.storyboard */; };
-		52C718B21FFC87FB0025D77E /* Set.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C718B11FFC87FB0025D77E /* Set.swift */; };
+		52C718B21FFC87FB0025D77E /* SetGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C718B11FFC87FB0025D77E /* SetGame.swift */; };
 		52C718B61FFC8E800025D77E /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C718B41FFC88B70025D77E /* Card.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5286081723B6CF6700ACD42F /* Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Util.swift; sourceTree = "<group>"; };
 		52C7189C1FFB44A30025D77E /* Set.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Set.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		52C7189F1FFB44A30025D77E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		52C718A11FFB44A30025D77E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -24,7 +26,7 @@
 		52C718A61FFB44A30025D77E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		52C718A91FFB44A30025D77E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		52C718AB1FFB44A30025D77E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		52C718B11FFC87FB0025D77E /* Set.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Set.swift; sourceTree = "<group>"; };
+		52C718B11FFC87FB0025D77E /* SetGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetGame.swift; sourceTree = "<group>"; };
 		52C718B41FFC88B70025D77E /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -59,7 +61,8 @@
 			isa = PBXGroup;
 			children = (
 				52C718A11FFB44A30025D77E /* ViewController.swift */,
-				52C718B11FFC87FB0025D77E /* Set.swift */,
+				5286081723B6CF6700ACD42F /* Util.swift */,
+				52C718B11FFC87FB0025D77E /* SetGame.swift */,
 				52C718B41FFC88B70025D77E /* Card.swift */,
 				52C718A31FFB44A30025D77E /* Main.storyboard */,
 				52C718AB1FFB44A30025D77E /* Info.plist */,
@@ -105,11 +108,12 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0920;
-				LastUpgradeCheck = 0920;
+				LastUpgradeCheck = 1130;
 				ORGANIZATIONNAME = "James Lemkin";
 				TargetAttributes = {
 					52C7189B1FFB44A30025D77E = {
 						CreatedOnToolsVersion = 9.2;
+						LastSwiftMigration = 1130;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -152,7 +156,8 @@
 			files = (
 				52C718A21FFB44A30025D77E /* ViewController.swift in Sources */,
 				52C718A01FFB44A30025D77E /* AppDelegate.swift in Sources */,
-				52C718B21FFC87FB0025D77E /* Set.swift in Sources */,
+				5286081823B6CF6700ACD42F /* Util.swift in Sources */,
+				52C718B21FFC87FB0025D77E /* SetGame.swift in Sources */,
 				52C718B61FFC8E800025D77E /* Card.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -193,6 +198,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -200,6 +206,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -250,6 +257,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -257,6 +265,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -297,7 +306,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "jtlemkin-ucdavis.edu.Set";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -313,7 +322,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "jtlemkin-ucdavis.edu.Set";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
