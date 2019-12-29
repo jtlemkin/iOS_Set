@@ -15,6 +15,7 @@ class SetGame
     private(set) var cardsInDeck = [Card]()
     private(set) var activeCards = [Card]()
     
+    //O(1)
     private(set) var selectedCards = [Card]() {
         didSet {
             if selectedCards.count == 3 {
@@ -29,10 +30,11 @@ class SetGame
         }
     }
     
+    //O(1)
     private static var allPossibleCards : [Card] {
         var possibleCards = [Card]()
         
-        //creates 27 cards using all possible combinations of attributes
+        //creates 81 cards using all possible combinations of attributes
         for color in Card.Color.allCases {
             for shape in Card.Shape.allCases {
                 for shading in Card.Shading.allCases {
@@ -65,7 +67,7 @@ class SetGame
     }
     
     //Deal 3 cards
-    func dealCards() {
+    func dealMoreCards() {
         dealCards(count: 3)
     }
     
@@ -118,6 +120,6 @@ class SetGame
         let numCardsToDeal = min(count, cardsInDeck.count, 24 - activeCards.count)
             
         //Add the cards to the active cards that you remove from deck
-        activeCards += (1...numCardsToDeal).map { _ in cardsInDeck.remove(at: cardsInDeck.count.arc4Random()) }
+        activeCards += (0..<numCardsToDeal).map { _ in cardsInDeck.remove(at: cardsInDeck.count.arc4Random()) }
     }
 }

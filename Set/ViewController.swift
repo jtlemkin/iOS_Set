@@ -13,6 +13,7 @@ class ViewController: UIViewController {
     
     @IBOutlet private var cardButtons: [UIButton]!
     
+    //Select a card
     @IBAction private func touchCard(_ sender: UIButton) {
         if let cardNumber = cardButtons.firstIndex(of: sender) {
             game.chooseCard(at: cardNumber)
@@ -30,6 +31,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var scoreLabel: UILabel!
     @IBOutlet weak var drawThreeButton: UIButton!
     
+    //Make cards more presentable
     override func viewDidLoad() {
         super.viewDidLoad()
         for card in cardButtons {
@@ -39,32 +41,57 @@ class ViewController: UIViewController {
         updateViewFromModel()
     }
     
-    private func updateViewFromModel() {
-        scoreLabel.text = "Sets Matched: \(game.numSetsMatched)"
-        
+    //Display active cards
+    private func displayCards() {
         for index in game.activeCards.indices {
             cardButtons[index].alpha = 1
             cardButtons[index].layer.borderColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
-            //cardButtons[index].setTitle("\(game.activeCards[index].color.rawValue) \(game.activeCards[index].shape.rawValue) \(game.activeCards[index].shading.rawValue) \(game.activeCards[index].number.rawValue)", for: UIControlState.normal)
             cardButtons[index].setAttributedTitle(getButtonLabel(card: game.activeCards[index]), for: UIControl.State.normal)
         }
-        
+    }
+    
+    //Highlight cards selected by the player
+    private func highlightSelectedCards() {
         for card in game.selectedCards {
             let index = game.activeCards.firstIndex(of: card)!
             let highlightedButton = cardButtons[index]
             
             highlightedButton.layer.borderColor = #colorLiteral(red: 0.8549019694, green: 0.250980407, blue: 0.4784313738, alpha: 1)
         }
-        
+    }
+    
+    //Hides lingering cards that remain when the deck is empty
+    private func hideInactiveCards() {
         for card in cardButtons[game.activeCards.count...] {
             card.alpha = 0
         }
-        
+    }
+    
+    //Update the label to show the current num sets matched
+    private func updateLabelText() {
+        scoreLabel.text = "Sets Matched: \(game.numSetsMatched)"
+    }
+    
+    //Indicates to user that they are unable to draw any more cards
+    private func setDrawCardButtonsAlpha() {
         drawThreeButton.alpha = game.cardsInDeck.isEmpty ? 0.25 : 1
     }
     
+    private func updateViewFromModel() {
+        updateLabelText()
+        
+        displayCards()
+        
+        highlightSelectedCards()
+        
+        hideInactiveCards()
+        
+        setDrawCardButtonsAlpha()
+    }
+    
+    // Adds three additional cards to active cards
     @IBAction func drawThree(_ sender: UIButton) {
-        game.dealCards()
+        game.dealMoreCards()
         updateViewFromModel()
     }
     
@@ -104,6 +131,7 @@ class ViewController: UIViewController {
         return NSAttributedString(string: text, attributes: attributes)
     }
     
+    //Find a set for the player
     @IBAction func cheat(_ sender: UIButton) {
         game.cheat()
         updateViewFromModel()
