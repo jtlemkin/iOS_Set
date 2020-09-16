@@ -1,0 +1,4 @@
+This is an iOS implementation of the game Set. 
+
+ViewController.swift is a good entry point for looking at the code. It serves as a bridge between the views of the app (defined in Main.storyboard) 
+and the model which is defined in (SetGame and Card). 
